@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MenuItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;MenuItem&lt;/code&gt; control is used for creating items for the &lt;code&gt;sap.m.Menu&lt;/code&gt;.
+It is derived from a core &lt;code&gt;sap.ui.core.Item&lt;/code&gt;.</documentation>
+    <since>1.38</since>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property group="Appearance" type="sap.ui.core/string" name="icon">
+            <documentation>Defines the icon, which belongs to the item.
+This can be an URI to an image or an icon font URI.</documentation>
+        </property>
+        <property group="Appearance" defaultValue="true" type="sap.ui.core/boolean" name="visible">
+            <documentation>Defines whether the item should be visible on the screen. If set to &lt;code&gt;false&lt;/code&gt;,
+a placeholder is rendered instead of the real item.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="false" type="sap.ui.core/boolean" name="startsSection">
+            <documentation>Defines whether a visual separator should be rendered before the item.
+&lt;b&gt;Note:&lt;/b&gt; If an item is invisible its separator is also not displayed.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="press">
+            <documentation>Fired after the item has been pressed.</documentation>
+        </event>
+        <event allowPreventDefault="false" name="propertyChanged">
+            <documentation>Fired when a property of the item changes.</documentation>
+            <parameters>
+                <parameter type="sap.ui.core/string" name="propertyKey">
+                    <documentation>The property name to be changed.</documentation>
+                </parameter>
+                <parameter type="any" name="propertyValue">
+                    <documentation>The new property value.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+        <event allowPreventDefault="false" name="aggregationChanged">
+            <documentation>Fired when aggregation of the item changes.</documentation>
+            <parameters>
+                <parameter type="any" name="aggregationName">
+                    <documentation>The aggregation name of the changed aggregation.</documentation>
+                </parameter>
+                <parameter type="any" name="methodName">
+                    <documentation>Which method changed the aggregation.</documentation>
+                </parameter>
+                <parameter type="any" name="methodParams">
+                    <documentation>What parameters were used to change the aggregation.</documentation>
+                </parameter>
+            </parameters>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation bindable="bindable" cardinality="0..n" type="sap.m/MenuItem" name="items">
+            <documentation>Defines the sub-items contained within this element.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

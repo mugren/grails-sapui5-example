@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>CalendarAppointmentVisualization</name>
+    <derived/>
+    <documentation>Visualisation of an &lt;code&gt;CalendarAppoinment&lt;/code&gt; in a &lt;code&gt;CalendarRow&lt;/code&gt;.</documentation>
+    <since>1.40.0</since>
+    <enumeration>
+        <value name="Standard">
+            <documentation>Standard visualization of an &lt;code&gt;CalendarAppoinment&lt;/code&gt;</documentation>
+        </value>
+        <value name="Filled">
+            <documentation>depending on the used theme the &lt;code&gt;CalendarAppoinment&lt;/code&gt; are visualized with filled color</documentation>
+        </value>
+    </enumeration>
+</simple-type>

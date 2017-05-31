@@ -1,0 +1,9 @@
+import com.groggystuff.service.web.rest.CodexController
+
+model {
+    CodexController.Item item
+}
+json {
+    id item.id
+    value item.value
+}

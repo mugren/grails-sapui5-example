@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NotificationListItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The NotificationListItem control is suitable for showing notifications to the user.</documentation>
+    <since>1.34</since>
+    <baseType>sap.m/NotificationListBase</baseType>
+    <properties>
+        <property group="Appearance" defaultValue="" type="sap.ui.core/string" name="description">
+            <documentation>Determines the description of the NotificationListItem.</documentation>
+        </property>
+        <property group="Appearance" defaultValue="true" type="sap.ui.core/boolean" name="truncate">
+            <documentation>Determines if the text in the title and the description of the notification are truncated to the first two lines.</documentation>
+        </property>
+        <property group="Appearance" defaultValue="false" type="sap.ui.core/boolean" name="hideShowMoreButton">
+            <documentation>Determines it the &quot;Show More&quot; button should be hidden.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Text" name="_bodyText">
+            <documentation>The text control that holds the description text of the NotificationListItem.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

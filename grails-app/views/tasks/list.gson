@@ -1,0 +1,10 @@
+import com.groggystuff.office.Task
+
+model {
+    List<Task> domainInstanceList
+    Integer domainInstanceCount
+}
+json {
+    count domainInstanceCount
+    tasks g.render(template: "/tasks/task", collection: domainInstanceList, var: 'task')
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ThreeColumnLayoutType</name>
+    <derived/>
+    <documentation>Types of three-column layout for the sap.m.FlexibleColumnLayout control</documentation>
+    <since>1.38</since>
+    <enumeration>
+        <value name="EndColumnEmphasized">
+            <documentation>Emphasized last column (endColumn) - column layout 25/25/50</documentation>
+        </value>
+        <value name="MidColumnEmphasized">
+            <documentation>Emphasized middle column (midColumn) - column layout 25/50/25</documentation>
+        </value>
+    </enumeration>
+</simple-type>

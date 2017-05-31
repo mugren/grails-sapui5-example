@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ComboBoxBase</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>An abstract class for combo boxes.</documentation>
+    <since>1.22.0</since>
+    <baseType>sap.m/ComboBoxTextField</baseType>
+    <events>
+        <event allowPreventDefault="false" since="1.38" name="loadItems">
+            <documentation>This event is fired when the end user moves the cursor to the text field, performs
+an action that requires items to be loaded, and items are not already loaded. For example,
+pressing F4 to open the dropdown list or typing something in the text field fires the event.
+
+&lt;b&gt;Note:&lt;/b&gt; We strongly recommend to only use this feature in performance critical scenarios.
+Loading the items lazily (on demand) to defer initialization has several implications for the end user
+experience. For example, the busy indicator has to be shown while the items are being loaded and
+assistive technology software also has to announce the state changes (which may be confusing
+for some screen reader users).
+
+&lt;b&gt;Note&lt;/b&gt;: Currently the &lt;code&gt;sap.m.MultiComboBox&lt;/code&gt; does not support this event.</documentation>
+        </event>
+    </events>
+    <aggregations default="items">
+        <aggregation bindable="bindable" cardinality="0..n" type="sap.ui.core/Item" name="items">
+            <documentation>Defines the items contained within this control.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.ui.core/PopupInterface" name="picker">
+            <documentation>Internal aggregation to hold the inner picker popup.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>ImageContent</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>This control can be displayed as image content in a tile.</documentation>
+    <since>1.38</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Appearance" type="sap.ui.core/URI" name="src">
+            <documentation>The image to be displayed as a graphical element within the imageContent. This can be an image or an icon from the icon font.</documentation>
+        </property>
+        <property group="Accessibility" type="sap.ui.core/string" name="description">
+            <documentation>Description of image. This text is used to provide ScreenReader information.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="press">
+            <documentation>The event is fired when the user chooses the image content.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.ui.core/Control" name="_content">
+            <documentation>The hidden aggregation for the image content.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

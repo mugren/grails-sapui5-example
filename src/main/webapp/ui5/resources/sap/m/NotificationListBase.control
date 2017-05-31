@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>NotificationListBase</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The NotificationListBase is the base class for NotificationListItem and NotificationListGroup.</documentation>
+    <since>1.38</since>
+    <baseType>sap.m/ListItemBase</baseType>
+    <properties>
+        <property group="Appearance" defaultValue="None" type="sap.ui.core/Priority" name="priority">
+            <documentation>Determines the priority of the Notification.</documentation>
+        </property>
+        <property group="Appearance" defaultValue="" type="sap.ui.core/string" name="title">
+            <documentation>Determines the title of the NotificationListBase item.</documentation>
+        </property>
+        <property group="Appearance" defaultValue="" type="sap.ui.core/string" name="datetime">
+            <documentation>Determines the due date of the NotificationListItem.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="true" type="sap.ui.core/boolean" name="showButtons">
+            <documentation>Determines the action buttons visibility.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="true" type="sap.ui.core/boolean" name="showCloseButton">
+            <documentation>Determines the visibility of the close button.</documentation>
+        </property>
+        <property group="Appearance" defaultValue="" type="sap.ui.core/string" name="authorName">
+            <documentation>Determines the notification group's author name.</documentation>
+        </property>
+        <property type="sap.ui.core/URI" name="authorPicture">
+            <documentation>Determines the URL of the notification group's author picture.</documentation>
+        </property>
+    </properties>
+    <events>
+        <event allowPreventDefault="false" name="close">
+            <documentation>Fired when the close button of the notification is pressed.&lt;br&gt;&lt;b&gt;Note:&lt;/b&gt; Pressing the close button doesn't destroy the notification automatically.</documentation>
+        </event>
+    </events>
+    <aggregations>
+        <aggregation cardinality="0..n" type="sap.m/Button" name="buttons">
+            <documentation>Action buttons.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Text" name="_headerTitle">
+            <documentation>The title control that holds the datetime text of the NotificationListBase item.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Text" name="_dateTime">
+            <documentation>The timestamp string that will be displayed in the NotificationListBase item.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Text" name="_authorName">
+            <documentation>The sap.m.Text that holds the author name.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.ui.core/Control" name="_authorImage">
+            <documentation>The sap.m.Image or sap.ui.core.Control control that holds the author image or icon.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/OverflowToolbar" name="_overflowToolbar">
+            <documentation>The OverflowToolbar control that holds the footer buttons.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Button" name="_closeButton">
+            <documentation>The close button of the notification item/group.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Button" name="_collapseButton">
+            <documentation>The collapse button of the notification item/group.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

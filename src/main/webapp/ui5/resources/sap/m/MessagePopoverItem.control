@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>MessagePopoverItem</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>Items provide information about Error Messages in the page.</documentation>
+    <since>1.28</since>
+    <baseType>sap.ui.core/Item</baseType>
+    <properties>
+        <property group="Appearance" defaultValue="Error" type="sap.ui.core/MessageType" name="type">
+            <documentation>Specifies the type of the message</documentation>
+        </property>
+        <property group="Appearance" defaultValue="" type="sap.ui.core/string" name="title">
+            <documentation>Specifies the title of the message</documentation>
+        </property>
+        <property group="Misc" type="sap.ui.core/string" name="subtitle">
+            <documentation>Specifies the subtitle of the message
+&lt;b&gt;Note:&lt;/b&gt; This is only visible when the &lt;code&gt;title&lt;/code&gt; property is not empty.</documentation>
+        </property>
+        <property group="Appearance" defaultValue="" type="sap.ui.core/string" name="description">
+            <documentation>Specifies detailed description of the message</documentation>
+        </property>
+        <property group="Appearance" defaultValue="false" type="sap.ui.core/boolean" name="markupDescription">
+            <documentation>Specifies if description should be interpreted as markup</documentation>
+        </property>
+        <property group="Behavior" type="sap.ui.core/URI" name="longtextUrl">
+            <documentation>Specifies long text description location URL</documentation>
+        </property>
+        <property group="Misc" type="sap.ui.core/int" name="counter">
+            <documentation>Defines the number of messages for a given message.</documentation>
+        </property>
+    </properties>
+    <aggregations default="link">
+        <aggregation cardinality="0..1" type="sap.m/Link" name="link">
+            <documentation>Adds a sap.m.Link control which will be displayed at the end of the description of a message.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

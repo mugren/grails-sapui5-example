@@ -1,0 +1,12 @@
+import com.groggystuff.service.web.rest.CodexController
+
+model {
+    List<CodexController.Item> domainInstanceList
+    Integer domainInstanceCount
+    String className
+}
+json {
+    'class' className
+    count domainInstanceCount
+    items g.render(template: "/codex/item", collection: domainInstanceList, var: 'item')
+}

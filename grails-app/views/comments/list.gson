@@ -1,0 +1,18 @@
+import com.groggystuff.discuss.Comment
+
+model {
+    List<Comment> comments
+    Integer count
+}
+json {
+    'count' count
+    if (comments != null) {
+        'comments' comments, { Comment comment ->
+            id comment.id
+            text comment.text
+            creator comment.creator
+            created comment.dateCreated
+            updated comment.lastUpdated
+        }
+    }
+}

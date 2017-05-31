@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>DateTimePicker</name>
+    <derived/>
+    <documentation>This is a date input control with a calendar and a time selector as date time picker.
+
+A date can be entered using a calendar or time selector that opens in a popup. Alternatively a value can be entered directly in the input field by typing it in.
+If a date is entered by typing it into the input field, it must fit the used date format and locale. (See &lt;code&gt;sap.ui.core.format.DateFormat&lt;/code&gt;)
+
+There are two options to provide a date for the &lt;code&gt;DateTimePicker&lt;/code&gt;.
+You can put a date as a string to the property &lt;code&gt;value&lt;/code&gt; or you can put a JavaScript Date object to the property &lt;code&gt;dateValue&lt;/code&gt;.
+Only one of the properties should be used at one time, but they are synchronized internally.
+What property you should use depends on the use case of the application:
+&lt;ul&gt;
+&lt;li&gt;Use the &lt;code&gt;value&lt;/code&gt; property if you want to bind the &lt;code&gt;DateTimePicker&lt;/code&gt; to a model using the &lt;code&gt;sap.ui.model.type.DateTime&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;value&lt;/code&gt; property if the date is provided as a string from the back end or inside the application (e.g. as ABAP type DATS field).&lt;/li&gt;
+&lt;li&gt;Use the &lt;code&gt;dateValue&lt;/code&gt; property if the date is already provided as a JavaScript Date object or you want to work with a JavaScript Date object.&lt;/li&gt;
+&lt;/ul&gt;
+
+All formatting and parsing of dates to and from strings is done using the {@link sap.ui.core.format.DateFormat}, so please read the corresponding documentation if you need more information about this.
+
+Supported format options are pattern-based on Unicode LDML Date Format notation. {@link http://unicode.org/reports/tr35/#Date_Field_Symbol_Table}
+
+For example, if the &lt;code&gt;valueFormat&lt;/code&gt; is &quot;yyyy-MM-dd-HH-mm-ss&quot;, &lt;code&gt;displayFormat&lt;/code&gt; is &quot;MMM d, y, HH:mm:ss&quot; and the used locale is English,
+a valid &lt;code&gt;value&lt;/code&gt; string is &quot;2015-07-30-10-30-15&quot;, which leads to an output of &quot;Jul 30, 2015, 10:30:15&quot;.
+
+If no &lt;code&gt;placeholder&lt;/code&gt; is set to the &lt;code&gt;DateTimePicker&lt;/code&gt;, the used &lt;code&gt;displayFormat&lt;/code&gt; is shown as a placeholder.
+If another placeholder is needed, it must be set.
+
+Internally the &lt;code&gt;sap.ui.unified.Calendar&lt;/code&gt; is used, but it is only needed if the &lt;code&gt;DateTimePicker&lt;/code&gt; is opened. This means that it is not needed for the initial rendering.
+If the &lt;code&gt;sap.ui.unified&lt;/code&gt; library is not loaded before the &lt;code&gt;DateTimePicker&lt;/code&gt; is opened, it will be loaded upon opening.
+This could lead to a waiting time before a &lt;code&gt;DateTimePicker&lt;/code&gt; is opened the first time. To prevent this, applications using the &lt;code&gt;DateTimePicker&lt;/code&gt; should also load
+the &lt;code&gt;sap.ui.unified&lt;/code&gt; library.</documentation>
+    <since>1.38.0</since>
+    <baseType>sap.m/DatePicker</baseType>
+    <aggregations>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/ResponsivePopover" name="_popup">
+            <documentation>Internal aggregation that contains the inner _picker pop-up.</documentation>
+        </aggregation>
+    </aggregations>
+</control>

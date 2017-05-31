@@ -1,0 +1,52 @@
+<mvc:View
+        controllerName="com.groggystuff.sap.ui.restApp.controller.task.TaskList"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc"
+        busy="{taskListView>/busy}"
+        busyIndicatorDelay="{taskListView>/delay}">
+    <Page id="taskListPage" title="{i18n>taskList}"
+          showNavButton="true"
+          navButtonPress="onNavBack"
+          class="sapUiResponsiveContentPadding">
+        <headerContent>
+            <Button icon="sap-icon://log" press="onLogout"/>
+        </headerContent>
+        <content>
+            <List
+                    growing="true"
+                    growingThreshold="10"
+                    headerText="{i18n>taskListTitle}"
+                    items="{taskList>/tasks}">
+                <items>
+                    <ObjectListItem
+                            type="Navigation"
+                            press="onListItemPressed"
+                            title="{taskList>name}"
+                            number="{taskList>taskTagId}">
+                        <firstStatus>
+                            <ObjectStatus title="{i18n>task.taskStatus}" text="{taskList>taskStatus}" state="Warning"/>
+                        </firstStatus>
+                        <attributes>
+                            <ObjectAttribute title="{i18n>task.startDate}"
+                                             text="{
+                            path: 'taskList>startDate',
+                            formatter: '.formatter.date'
+                            }"
+                            />
+                            <ObjectAttribute title="{i18n>task.dueDate}"
+                                             text="{
+                            path: 'taskList>dueDate',
+                            formatter: '.formatter.date'
+                            }"
+                            />
+                            <ObjectAttribute title="{i18n>task.taskType}"
+                                             text="{taskList>taskType}"/>
+                            <ObjectAttribute title="{i18n>task.assignedTo}"
+                                             text="{taskList>assignedTo}"/>
+                        </attributes>
+                    </ObjectListItem>
+                </items>
+            </List>
+        </content>
+    </Page>
+</mvc:View>

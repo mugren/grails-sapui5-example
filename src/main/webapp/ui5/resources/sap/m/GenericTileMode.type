@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<simple-type xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>GenericTileMode</name>
+    <derived/>
+    <documentation>Defines the mode of GenericTile.</documentation>
+    <since>1.38.0</since>
+    <enumeration>
+        <value name="ContentMode">
+            <documentation>Default mode (Two lines for the header and one line for the subtitle).</documentation>
+        </value>
+        <value name="HeaderMode">
+            <documentation>Header mode (Four lines for the header and one line for the subtitle).</documentation>
+        </value>
+    </enumeration>
+</simple-type>

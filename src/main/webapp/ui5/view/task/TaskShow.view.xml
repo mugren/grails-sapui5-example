@@ -1,0 +1,101 @@
+<mvc:View
+        controllerName="com.groggystuff.sap.ui.restApp.controller.task.TaskShow"
+        xmlns="sap.m"
+        xmlns:form="sap.ui.layout.form"
+        xmlns:mvc="sap.ui.core.mvc"
+        xmlns:semantic="sap.m.semantic"
+        xmlns:core="sap.ui.core"
+>
+    <semantic:FullscreenPage
+            id="taskShowPage"
+            busy="{taskShowView>/busy}"
+            busyIndicatorDelay="{taskShowView>/delay}"
+            navButtonPress="onNavBack"
+            showNavButton="true"
+            title="{i18n>taskShowTitle} {taskShow>/taskTagId}">
+        <semantic:customHeaderContent>
+            <Button icon="sap-icon://log" press="onLogout"/>
+        </semantic:customHeaderContent>
+        <semantic:content>
+            <ObjectHeader
+                    id="taskShowHeader"
+                    title="{taskShow>/name}">
+            </ObjectHeader>
+            <IconTabBar id="iconTabBar"
+                        expanded="{device>/isNoPhone}"
+                        class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter icon="sap-icon://hint" key="info">
+                        <form:SimpleForm>
+                            <form:content>
+                                <Label text="{i18n>task.description}"/>
+                                <Text text="{taskShow>/description}">
+                                </Text>
+                                <Label text="{i18n>task.assignedTo}"/>
+                                <Text text="{taskShow>/assignedTo}"/>
+                                <Label text="{i18n>task.creator}"/>
+                                <Text text="{taskShow>/creator}"/>
+                                <Label text="{i18n>task.taskStatus}"/>
+                                <Text text="{taskShow>/taskStatus}"/>
+                                <Label text="{i18n>task.taskType}"/>
+                                <Text text="{taskShow>/taskType}"/>
+                                <Label text="{i18n>task.startDate}"/>
+                                <Text text="{
+                                        path: 'taskShow>/startDate',
+                                        formatter: '.formatter.date'
+                                 }"/>
+                                <Label text="{i18n>task.dueDate}"/>
+                                <Text text="{
+                                        path: 'taskShow>/dueDate',
+                                        formatter: '.formatter.date'
+                                 }"/>
+                                <Label text="{i18n>task.dateCreated}"/>
+                                <Text text="{
+                                        path: 'taskShow>/dateCreated',
+                                        formatter: '.formatter.date'
+                                 }"/>
+                            </form:content>
+                        </form:SimpleForm>
+                    </IconTabFilter>
+                    <IconTabFilter icon="sap-icon://inspection" key="changes">
+                        <Panel expandable="true" expanded="true"
+                               headerText="Header Text" width="100%">
+                            <content>
+                                <Text text="Something TODO"/>
+                            </content>
+                        </Panel>
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+            <Panel
+                    class="sapUiContentPadding"
+                    headerText="{i18n>task.commentsTabTitle}">
+                <content>
+                    <FeedInput post="onPostComment"/>
+                    <List
+                            id="idCommentsList"
+                            noDataText="{i18n>task.commentNoData}"
+                            showSeparators="Inner"
+                            items="{
+                                     path: 'comments>/comments',
+                                     sorter: {
+                                         path: 'date',
+                                         descending: true
+                                    }
+                    }">
+                        <FeedListItem
+                                sender="{comments>creator}"
+                                text="{comments>text}"
+                                timestamp="{
+                                path:'comments>created',
+                                formatter:'.formatter.date'
+                                }"/>
+                    </List>
+                </content>
+            </Panel>
+        </semantic:content>
+        <semantic:mainAction>
+            <semantic:MainAction text="{i18n>task.taskStatus.edit}" press="onTaskStatusChange"/>
+        </semantic:mainAction>
+    </semantic:FullscreenPage>
+</mvc:View>

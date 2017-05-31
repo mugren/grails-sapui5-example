@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<control xmlns="http://www.sap.com/sap.ui.library.xsd">
+    <name>StepInput</name>
+    <derived/>
+    <author>SAP SE</author>
+    <documentation>The &lt;code&gt;StepInput&lt;/code&gt; control allows the user to change the input values with predefined increments (steps).</documentation>
+    <since>1.40</since>
+    <baseType>sap.ui.core/Control</baseType>
+    <properties>
+        <property group="Data" type="any" name="min">
+            <documentation>Sets the minimum possible value of the defined range.</documentation>
+        </property>
+        <property group="Data" type="any" name="max">
+            <documentation>Sets the maximum possible value of the defined range.</documentation>
+        </property>
+        <property group="Data" defaultValue="1" type="any" name="step">
+            <documentation>Increases/decreases the value of the input.</documentation>
+        </property>
+        <property group="Data" defaultValue="2" type="any" name="largerStep">
+            <documentation>TIncreases/decreases the value with a larger value than the set step only when using the PageUp/PageDown keys.
+Default value is 2 times larger than the set step.</documentation>
+        </property>
+        <property group="Data" defaultValue="0" type="any" name="value">
+            <documentation>Determines the value of the &lt;code&gt;StepInput&lt;/code&gt; and can be set initially from the app developer.</documentation>
+        </property>
+        <property group="Dimension" type="sap.ui.core/CSSSize" name="width">
+            <documentation>Defines the width of the control.</documentation>
+        </property>
+        <property group="Data" defaultValue="None" type="sap.ui.core/ValueState" name="valueState">
+            <documentation>Accepts the core enumeration ValueState.type that supports &lt;code&gt;None&lt;/code&gt;, &lt;code&gt;Error&lt;/code&gt;, &lt;code&gt;Warning&lt;/code&gt; and &lt;code&gt;Success&lt;/code&gt;.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="true" type="sap.ui.core/boolean" name="editable">
+            <documentation>Defines whether the control can be modified by the user or not.
+&lt;b&gt;Note:&lt;/b&gt; A user can tab to the non-editable control, highlight it, and copy the text from it.</documentation>
+        </property>
+        <property group="Behavior" defaultValue="true" type="sap.ui.core/boolean" name="enabled">
+            <documentation>Indicates whether the user can interact with the control or not.
+&lt;b&gt;Note:&lt;/b&gt; Disabled controls cannot be focused and they are out of the tab-chain.</documentation>
+        </property>
+    </properties>
+    <aggregations>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Button" name="_incrementButton">
+            <documentation>Internal aggregation that contains the &lt;code&gt;Button&lt;/code&gt; for incrementation.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Button" name="_decrementButton">
+            <documentation>Internal aggregation that contains the &lt;code&gt;Button&lt;/code&gt; for decrementation.</documentation>
+        </aggregation>
+        <aggregation visibility="hidden" cardinality="0..1" type="sap.m/Input" name="_input">
+            <documentation>Internal aggregation that contains the &lt;code&gt;Input&lt;/code&gt;.</documentation>
+        </aggregation>
+    </aggregations>
+    <associations>
+        <association cardinality="0..n" type="sap.ui.core/Control" name="ariaLabelledBy">
+            <documentation>Association to controls / IDs that label this control (see WAI-ARIA attribute aria-labelledby).</documentation>
+        </association>
+        <association cardinality="0..n" type="sap.ui.core/Control" name="ariaDescribedBy">
+            <documentation>Association to controls / IDs which describe this control (see WAI-ARIA attribute aria-describedby).</documentation>
+        </association>
+    </associations>
+</control>

@@ -1,0 +1,10 @@
+model {
+    Long domainId
+    String className
+    String fieldName
+}
+json {
+    id domainId
+    'class' className
+    name fieldName
+}

@@ -1,0 +1,14 @@
+<mvc:View
+        controllerName="com.groggystuff.sap.ui.restApp.controller.Home"
+        xmlns="sap.m"
+        xmlns:mvc="sap.ui.core.mvc">
+    <Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+        <headerContent>
+            <Button icon="sap-icon://log" press="onLogout"/>
+        </headerContent>
+        <content>
+            <Button id="taskListBtn" text="{i18n>showTaskList}" press="onNavToTasks"
+                    class="sapUiTinyMarginEnd"/>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,16 @@
+import com.groggystuff.office.Task
+import com.groggystuff.security.utils.UserHelperService
+
+model {
+    Task task
+}
+json {
+    taskId task?.id
+    name task?.name
+    startDate task?.startDate
+    dueDate task?.dueDate
+    taskType task?.taskType?.toString()
+    taskStatus task?.taskStatus?.toString()
+    taskTagId task?.taskTagId
+    assignedTo UserHelperService.printFullUsernames(task?.assignedTo)
+}

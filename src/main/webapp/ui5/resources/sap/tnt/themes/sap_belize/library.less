@@ -1,0 +1,152 @@
+/* NOTE: This file was generated as an optimized version of "library.source.less" for the Theme Designer. */
+
+/*!
+ * UI development toolkit for HTML5 (OpenUI5)
+ * (c) Copyright 2009-2016 SAP SE or an SAP affiliate company.
+ * Licensed under the Apache License, Version 2.0 - see LICENSE.txt.
+ */
+
+@import "../base/library.less";
+@import "../../../../../Base/baseLib/sap_belize/base.less"; /* ORIGINAL IMPORT PATH: "../../../../sap/ui/core/themes/sap_belize/base.less" */
+
+@import "../../../../sap/ui/core/themes/sap_belize/global.less";
+
+/* START "NavigationList.less" */
+/* ======================================= */
+/* CSS for control sap.tnt/NavigationList  */
+/* Belize theme                            */
+/* ======================================= */
+
+.sapTntNavLIGroup {
+	border-bottom: 1px solid @sapUiListBorderColor;
+}
+
+.sapTntNavLIItem {
+	background-color: @sapUiListBackground;
+
+	& > .sapMText {
+		color: @sapUiListTextColor;
+	}
+
+	& > .sapUiIcon {
+		color: @sapUiContentIconColor;
+	}
+}
+
+.sapTntNavLIItem:not(.sapTntNavLIItemDisabled):hover {
+	background-color: @sapUiListHoverBackground;
+}
+
+.sapTntNavLI .sapTntNavLIGroup.sapTntNavLIItem:not(.sapTntNavLIItemDisabled):active,
+.sapTntNavLI .sapTntNavLIGroupItem.sapTntNavLIItem:not(.sapTntNavLIItemDisabled):active{
+	background-color: @sapUiListActiveBackground;
+
+	& > .sapMText {
+		color: @sapUiListActiveTextColor;
+	}
+
+	& > .sapUiIcon {
+		color: @sapUiListActiveTextColor;
+	}
+}
+
+
+.sapTntNavLIItemSelected .sapTntNavLIItem,
+.sapTntNavLIItemSelected.sapTntNavLIGroupItem.sapTntNavLIGroupItem {
+	background-color: @sapUiListSelectionBackgroundColor;
+}
+
+.sapTntNavLIItemSelected .sapTntNavLIItem:hover,
+.sapTntNavLIItemSelected.sapTntNavLIGroupItem.sapTntNavLIGroupItem:hover {
+	background-color: @sapUiListSelectionHoverBackground;
+}
+
+.sapTntNavLIGroupItem.sapTntNavLIItem {
+	background-color: darken(@sapUiListBackground, 3);
+}
+
+.sapTntNavLIGroupItem.sapTntNavLIItem:last-child {
+	border-bottom: 1px solid @sapUiListBorderColor;
+}
+
+.sapTntNavLI li:focus,
+.sapTntNavLIItem:focus {
+	outline: none;
+}
+
+.sapTntNavLI li:focus::before,
+.sapTntNavLIItem:focus::before {
+	border: 1px dotted @sapUiContentFocusColor;
+	position: absolute;
+	content: " ";
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+	left: 1px;
+	z-index: 2;
+	pointer-events: none;
+}
+/* END "NavigationList.less" */
+
+/* START "ToolHeader.less" */
+/* =================================== */
+/* CSS for control sap.tnt/ToolHeader  */
+/* Belize theme                        */
+/* =================================== */
+
+.sapTntToolHeader.sapMTB {
+	background-color: darken(@sapUiPageHeaderBackground, 8);
+	border: 1px solid darken(@sapUiPageHeaderBorderColor, 8);
+}
+
+.sapTntToolHeaderPopover.sapMOTAPopover.sapMPopover {
+	background-color: darken(@sapUiPageHeaderBackground, 8);
+}
+
+/* END "ToolHeader.less" */
+
+/* START "SideNavigation.less" */
+/* ======================================= */
+/* CSS for control sap.tnt/SideNavigation  */
+/* Belize theme                            */
+/* ======================================= */
+
+.sapTntSideNavigation {
+  background: @sapUiListBackground;
+  border-right: 1px solid @sapUiGroupContentBorderColor;
+}
+
+.sapTntSideNavigationSeparator {
+  background-color: @sapUiAccent6;
+}
+
+/* Styles for layout with arrows
+   ========================================================================== */
+.sapTntSideNavigationScrollIconUp {
+  border-bottom: 1px solid @sapUiListBorderColor;
+}
+
+.sapTntSideNavigationScrollIconDown {
+  border-top: 1px solid @sapUiListBorderColor;
+}
+
+.sapTntSideNavigationScrollIcon {
+  color: @sapUiContentIconColor;
+}
+
+.sapTntSideNavigationScrollIcon:not(.sapTntSideNavigationScrollIconDisabled):hover {
+  background-color: @sapUiListHoverBackground;
+}
+
+.sapTntSideNavigationScrollIcon:not(.sapTntSideNavigationScrollIconDisabled):active {
+  background-color: @sapUiListHighlightColor;
+  color: @sapUiListActiveTextColor;
+}
+/* END "SideNavigation.less" */
+
+/* START "ToolPage.less" */
+/* ================================= */
+/* CSS for control sap.tnt/ToolPage  */
+/* Belize theme                      */
+/* ================================= */
+/* END "ToolPage.less" */
