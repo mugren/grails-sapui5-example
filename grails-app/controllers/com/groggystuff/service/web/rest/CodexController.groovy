@@ -12,7 +12,7 @@ class CodexController implements RestControllerTrait {
 
     GrailsApplication grailsApplication
 
-    private static final packagePrefix = "com.groggystuff.office."
+    private static final String packagePrefix = "com.groggystuff.office."
 
     class Item {
         Long id

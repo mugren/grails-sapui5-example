@@ -19,7 +19,7 @@ class CommentsController implements RestControllerTrait {
     CommentService commentService
     SpringSecurityService springSecurityService
 
-    private static final packagePrefix = "com.groggystuff.office."
+    private static final String packagePrefix = "com.groggystuff.office."
 
     private DiscussEntity getDomainInstance(String className, String domainId) {
         Class clazz = grailsApplication.getArtefact('Domain', packagePrefix + className.capitalize())?.clazz
