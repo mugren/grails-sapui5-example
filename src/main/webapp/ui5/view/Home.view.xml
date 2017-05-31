@@ -6,9 +6,14 @@
         <headerContent>
             <Button icon="sap-icon://log" press="onLogout"/>
         </headerContent>
-        <content>
-            <Button id="taskListBtn" text="{i18n>showTaskList}" press="onNavToTasks"
-                    class="sapUiTinyMarginEnd"/>
-        </content>
+        <FlexBox
+                height="100px"
+                alignItems="Start"
+                justifyContent="Center">
+            <items>
+                <Button width="200px" icon="sap-icon://task" id="taskListBtn" text="{i18n>showTaskList}" press="onNavToTasks"
+                        class="sapUiTinyMarginEnd"/>
+            </items>
+        </FlexBox>
     </Page>
 </mvc:View>
